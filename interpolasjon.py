@@ -57,7 +57,14 @@ for i in range(0, 100):
 plt.plot(xx, yy, 'k-', label = "Polynom")
 
 
-b2 = np.array([1, 20, 10, 25, 40])
-np.vander()
 
+#Lag matrisene ved hjelp av numpy sin "vander()" funksjon
+a2 = np.array([0, 1, 2, 3, 4])
+b2 = np.array([1, 20, 10, 25, 40])
+
+a2 = np.vander(a2)
+
+x2 = np.linalg.solve(a2, b2)
+
+print(x2)
 
