@@ -15,7 +15,8 @@ print( np.matmul(np.matmul(ainv, A.T), y))
 
 
 
-#Oppg 2-b fra ukesoppgavene
+# Oppg 2-b fra ukesoppgavene
+# I formatet (Ax = B), A=a2 - B=b2
 a2 = np.array([
     [1, 0, 0, 0, 0, 0],
     [0, 1, 1, 0, 0, 0],
