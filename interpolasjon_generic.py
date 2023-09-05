@@ -29,6 +29,8 @@ def scatter_interpolate(x, y):
         for j in range(len(xx)):
             yy[j] += p[i] * xx[j]**(len(p)-i-1)
 
+    plt.figure(figsize=(8, 5), dpi=800)    
+
     plt.scatter(x, y)
     plt.plot(xx, yy)
     
