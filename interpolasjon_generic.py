@@ -13,20 +13,24 @@ x = [1, 2, 3, 4, 5]
 y = [2, 5, 4, 7, 8]
 
 
-N = 50
-XMIN = 1
-XMAX = 5
+def scatter_interpolate(x, y):
+    N = 50
+    XMIN = x[0] - 0.15
+    XMAX = x[-1] + 0.15
 
-xv = np.vander(x)
-p = np.linalg.solve(xv, y)
+    xv = np.vander(x)
+    p = np.linalg.solve(xv, y)
 
-xx = np.linspace(XMIN, XMAX, N)
-yy = np.zeros(N)
+    xx = np.linspace(XMIN, XMAX, N)
+    yy = np.zeros(N)
 
-#yy = p[0] * xx**3 + p[1] * xx**2 + p[2] * xx + p[3]
-for i in range(len(p)):
-    for j in range(len(xx)):
-        yy[j] += p[i] * xx[j]**(len(p)-i-1)
+    #yy = p[0] * xx**3 + p[1] * xx**2 + p[2] * xx + p[3]
+    for i in range(len(p)):
+        for j in range(len(xx)):
+            yy[j] += p[i] * xx[j]**(len(p)-i-1)
 
-plt.scatter(x, y)
-plt.plot(xx, yy)
+    plt.scatter(x, y)
+    plt.plot(xx, yy)
+    
+
+scatter_interpolate(x, y)
